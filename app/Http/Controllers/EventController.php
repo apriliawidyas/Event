@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\event;
 use Illuminate\Http\Request;
-
+use App\category;
 class EventController extends Controller
 {
     /**
@@ -31,7 +31,9 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        $kategori = category::all();
+
+        return view('Admin.event.create', compact('kategori'));
     }
 
     /**
@@ -42,7 +44,9 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = event::create($request->all());
+        $data->save();
+        return redirect(route('event.index'));
     }
 
     /**
@@ -64,7 +68,9 @@ class EventController extends Controller
      */
     public function edit(event $event)
     {
-        //
+        $kategori = category::all();
+        $data = event::findOrFail($event);
+        return view('Admin.event.edit', compact(['data']))->with('kategori', $kategori);
     }
 
     /**
@@ -76,7 +82,9 @@ class EventController extends Controller
      */
     public function update(Request $request, event $event)
     {
-        //
+        $data = event::findOrFail($event);
+        $data->fill($request->except(['_token']))->save();
+        return back()->with(['alert'=>'success', 'msg'=>'Data Berhasil di DiUbah']);
     }
 
     /**
@@ -87,6 +95,7 @@ class EventController extends Controller
      */
     public function destroy(event $event)
     {
-        //
+        event::where('id',$id)->delete();
+        return redirect(route('event.index'));
     }
 }

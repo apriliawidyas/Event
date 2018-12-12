@@ -27,7 +27,11 @@ Route::get('regisAdmin', function (){
     return view('registerAdmin');
 });
 Route::get('admin', 'AdminController@index');
-Route::get('admin/event', 'EventController@index');
+Route::get('admin/event', 'EventController@index')->name('event.index');
+Route::get('admin/event/create', 'EventController@create')->name('event.create');
+Route::post('admin/event/store', 'EventController@store')->name('event.store');
+Route::put('admin/event/edit/', 'EventController@store')->name('event.update');
+Route::get('admin/event/destroy', 'EventController@destroy')->name('event.destroy');
 
 
 

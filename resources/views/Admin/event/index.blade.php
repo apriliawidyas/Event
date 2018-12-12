@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h2 class="card-title">Event List</h2>
                 <div class="">
-                    <a href="{{route('home')}}" class="btn btn-primary">Add Event</a>
+                    <a href="{{route('event.create')}}" class="btn btn-primary">Add Event</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped table-hover">
@@ -39,10 +39,10 @@
                                 <td>{{$item->foto}}</td>
                                 <td>{{$item->deskripsi}}</td>
                                 <td>
-                                    <form action="{{ route('Admin.event.destroy', $item)}}" method="Post">
+                                    <form action="{{ route('event.destroy', $item)}}" method="Post">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
-                                        <a href="{{route('Admin.event.edit', ['id'=>$item->id])}}" class="btn badge-warning">Edit</a>
+                                        <a href="{{route('event.update', ['id'=>$item->id])}}" class="btn badge-warning">Edit</a>
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
                                 </td>
