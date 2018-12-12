@@ -7,10 +7,10 @@
             <div class="card-body">
                 <h2 class="card-title">Event List</h2>
                 <div class="">
-                    <a href="{{route('Admin.event.create')}}" class="btn-primary">Add Event</a>
+                    <a href="{{route('home')}}" class="btn btn-primary">Add Event</a>
                 </div>
                 <div class="table-responsive">
-                    <table class="table-striped table-hover">
+                    <table class="table table-striped table-hover">
                         <thead>
                         <th>Penyelenggara</th>
                         <th>Event</th>
@@ -44,8 +44,10 @@
                                         {{ method_field('DELETE') }}
                                         <a href="{{route('Admin.event.edit', ['id'=>$item->id])}}" class="btn badge-warning">Edit</a>
                                         <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

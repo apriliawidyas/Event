@@ -26,8 +26,9 @@ Route::get('/home_user', function () {
 Route::get('regisAdmin', function (){
     return view('registerAdmin');
 });
-Route::resource('admin', 'AdminController');
-Route::resource('admin/event', 'EventController');
+Route::get('admin', 'AdminController@index');
+Route::get('admin/event', 'EventController@index');
+
 
 
 

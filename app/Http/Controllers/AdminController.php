@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\event;
 use App\ModelAdmin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -12,4 +13,5 @@ class AdminController extends Controller
 
         return view('Admin.home');
     }
+
 }
