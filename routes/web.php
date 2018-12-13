@@ -39,6 +39,11 @@ Route::post('admin/tag/store', 'TagController@store')->name('tag.store');
 Route::put('admin/tag/edit', 'TagController@store')->name('tag.update');
 Route::get('admin/tag/destroy', 'TagController@destroy')->name('tag.destroy');
 
+Route::get('admin/category', 'CategoryController@index')->name('category.index');
+Route::get('admin/category/create', 'CategoryController@create')->name('category.create');
+Route::post('admin/category/store', 'CategoryController@store')->name('category.store');
+Route::put('admin/category/edit', 'CategoryController@store')->name('category.update');
+Route::get('admin/category/destroy', 'CategoryController@destroy')->name('category.destroy');
 
 
 Route::get('/home_user', 'User@index');

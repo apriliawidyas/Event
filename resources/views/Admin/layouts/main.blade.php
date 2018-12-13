@@ -110,7 +110,7 @@
                     <a href="#" class="waves-effect"><i class="fa fa-money" aria-hidden="true"></i> Rekening</a>
                 </li>
                 <li>
-                    <a href="blank.html" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>Blank Page</a>
+                    <a href="{{route('category.index')}}" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>Category</a>
                 </li>
                 <li>
                     <a href="404.html" class="waves-effect"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>Error 404</a>

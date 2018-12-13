@@ -12,9 +12,16 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('log', ['only' => ['fooAction', 'barAction']]);
+    }
+
     public function index()
     {
-        //
+        $data=category::all();
+        return view('Admin.category.index', compact('data'));
     }
 
     /**
@@ -24,7 +31,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+       return view('Admin.category.create');
     }
 
     /**
@@ -35,7 +42,9 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=category::create($request->all());
+        $data->save();
+        return redirect(route('category.index'));
     }
 
     /**

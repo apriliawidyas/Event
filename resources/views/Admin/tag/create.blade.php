@@ -8,7 +8,7 @@
                 <h2 class="card-title">Add Tag</h2>
             </div>
             <div class="justify-content-center">
-                <div class="col-4 p-3">
+                <div class="col-lg-5">
                     @if(session()->has('alert'))
                         <div class="alert alert-success">
                             {{session('msg')}}

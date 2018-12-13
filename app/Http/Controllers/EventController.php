@@ -70,7 +70,7 @@ class EventController extends Controller
     {
         $kategori = category::all();
         $data = event::findOrFail($event);
-        return view('Admin.event.edit', compact(['data']))->with('kategori', $kategori);
+        return view('event.update', compact('event','kategori'));
     }
 
     /**
@@ -95,7 +95,8 @@ class EventController extends Controller
      */
     public function destroy(event $event)
     {
-        event::where('id',$id)->delete();
-        return redirect(route('event.index'));
+        $data=event::where('id',$event);
+        $data->delete();
+        return back();
     }
 }

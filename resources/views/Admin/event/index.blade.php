@@ -42,7 +42,7 @@
                                     <form action="{{ route('event.destroy', $item)}}" method="Post">
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
-                                        <a href="{{route('event.update', ['id'=>$item->id])}}" class="btn badge-warning">Edit</a>
+                                        <a href="{{route('event.edit', ['id'=>$item->id])}}" class="btn badge-warning">Edit</a>
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
                                 </td>
