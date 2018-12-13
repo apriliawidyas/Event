@@ -33,6 +33,11 @@ Route::post('admin/event/store', 'EventController@store')->name('event.store');
 Route::put('admin/event/edit/', 'EventController@store')->name('event.update');
 Route::get('admin/event/destroy', 'EventController@destroy')->name('event.destroy');
 
+Route::get('admin/tag', 'TagController@index')->name('tag.index');
+Route::get('admin/tag/create', 'TagController@create')->name('tag.create');
+Route::post('admin/tag/store', 'TagController@store')->name('tag.store');
+Route::put('admin/tag/edit', 'TagController@store')->name('tag.update');
+Route::get('admin/tag/destroy', 'TagController@destroy')->name('tag.destroy');
 
 
 

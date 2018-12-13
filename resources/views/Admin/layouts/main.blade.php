@@ -98,13 +98,13 @@
                     <a href="#" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Event</a>
+                    <a href="{{route('event.index')}}" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Event</a>
                 </li>
                 <li>
                     <a href="#" class="waves-effect"><i class="fa fa-calendar" aria-hidden="true"></i> Calender</a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i class="fa fa-tag" aria-hidden="true"></i>Tag</a>
+                    <a href="{{route('tag.index')}}" class="waves-effect"><i class="fa fa-tag" aria-hidden="true"></i>Tag</a>
                 </li>
                 <li>
                     <a href="#" class="waves-effect"><i class="fa fa-money" aria-hidden="true"></i> Rekening</a>
