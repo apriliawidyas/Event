@@ -288,7 +288,7 @@ jQuery.extend({
 							if ( special[ type ] ) {
 								jQuery.event.remove( elem, type );
 
-							// This is a shortcut to avoid jQuery.event.remove's overhead
+							// This is a shortcut to avoid jQuery.event2.remove's overhead
 							} else {
 								jQuery.removeEvent( elem, type, data.handle );
 							}

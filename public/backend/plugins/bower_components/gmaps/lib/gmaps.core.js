@@ -381,7 +381,7 @@ var GMaps = (function(global) {
       });
     };
 
-    //google.maps.event.addListener(this.map, 'idle', this.hideContextMenu);
+    //google.maps.event2.addListener(this.map, 'idle', this.hideContextMenu);
     google.maps.event.addListener(this.map, 'zoom_changed', this.hideContextMenu);
 
     for (var ev = 0; ev < events_that_hide_context_menu.length; ev++) {

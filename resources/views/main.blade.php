@@ -43,9 +43,9 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="{{url ('/') }}">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#services">Services</a>
-                </li>
+                {{--<li class="nav-item">--}}
+                    {{--<a class="nav-link js-scroll-trigger" href="#services">Services</a>--}}
+                {{--</li>--}}
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#portfolio">Event</a>
                 </li>
@@ -57,6 +57,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="#">
+                        <input type="text" placeholder="Search..." name="search">
+                        <button type="submit">Submit</button>
+                    </a>
                 </li>
                 @guest
                     <li class="nav-item">
@@ -81,6 +87,7 @@
                         </div>
                     </li>
                 @endguest
+
             </ul>
         </div>
     </div>

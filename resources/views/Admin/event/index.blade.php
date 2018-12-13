@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h2 class="card-title">Event List</h2>
                 <div class="">
-                    <a href="{{route('event.create')}}" class="btn btn-primary">Add Event</a>
+                    <a href="{{route('event2')}}" class="btn btn-primary">Add Event</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped table-hover">
@@ -22,7 +22,7 @@
                         <th>Kuota</th>
                         <th>Poster</th>
                         <th>Deskripsi</th>
-                        <th>Action</th>
+                        <th width="15%">Action</th>
                         </thead>
                         
                         <tbody>
@@ -36,13 +36,13 @@
                                 <td>{{$item->tempat_event}}</td>
                                 <td>{{$item->harga}}</td>
                                 <td>{{$item->kuota}}</td>
-                                <td>{{$item->foto}}</td>
+                                <td><img src="{{ asset('storage/' . $item->foto) }}" class="img-fluid" style="max-width: 60px" alt="{{ $item->nama_event }}"></td>
                                 <td>{{$item->deskripsi}}</td>
                                 <td>
-                                    <form action="{{ route('event.destroy', $item)}}" method="Post">
-                                        {{ csrf_field() }}
-                                        {{ method_field('DELETE') }}
-                                        <a href="{{route('event.edit', ['id'=>$item->id])}}" class="btn badge-warning">Edit</a>
+                                    <form action="{{ route('event.destroy', $item)}}" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                        <a href="{{route('event.edit', $item)}}" class="btn badge-warning">Edit</a>
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
                                 </td>

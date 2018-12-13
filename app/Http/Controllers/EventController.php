@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\event;
 use Illuminate\Http\Request;
 use App\category;
+use Illuminate\Support\Facades\Storage;
+
 class EventController extends Controller
 {
     /**
@@ -44,8 +46,20 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        $data = event::create($request->all());
-        $data->save();
+        $data = $request->all();
+
+        if($request->hasFile('foto'))
+        {
+            $img = $request->file('foto');
+            $fileName = uniqid() . $img->getClientOriginalName();
+            $path = 'uploads/events/';
+            $fullPath = $path . $fileName;
+            Storage::disk('public')->putFileAs($path, $img, $fileName);
+        }
+
+        $data['foto'] = $fullPath;
+
+        event::create($data);
         return redirect(route('event.index'));
     }
 
@@ -69,8 +83,8 @@ class EventController extends Controller
     public function edit(event $event)
     {
         $kategori = category::all();
-        $data = event::findOrFail($event);
-        return view('event.update', compact('event','kategori'));
+
+        return view('Admin.event.edit', compact('event','kategori'));
     }
 
     /**
@@ -82,8 +96,25 @@ class EventController extends Controller
      */
     public function update(Request $request, event $event)
     {
-        $data = event::findOrFail($event);
-        $data->fill($request->except(['_token']))->save();
+        $data = $request->all();
+
+        if($request->hasFile('foto'))
+        {
+            $img = $request->file('foto');
+            $fileName = uniqid() . $img->getClientOriginalName();
+            $path = 'uploads/events/';
+            $fullPath = $path . $fileName;
+            Storage::disk('public')->putFileAs($path, $img, $fileName);
+
+            if($event->foto) {
+                Storage::disk('public')->delete($event->foto);
+            }
+
+            $data['foto'] = $fullPath;
+        }
+
+        $event->update($data);
+
         return back()->with(['alert'=>'success', 'msg'=>'Data Berhasil di DiUbah']);
     }
 
@@ -95,8 +126,11 @@ class EventController extends Controller
      */
     public function destroy(event $event)
     {
-        $data=event::where('id',$event);
-        $data->delete();
+        if($event->foto) {
+            Storage::disk('public')->delete($event->foto);
+        }
+        $event->delete();
+
         return back();
     }
 }

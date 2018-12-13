@@ -52,6 +52,7 @@
     <nav class="navbar navbar-default navbar-static-top m-b-0">
         <div class="navbar-header">
             <div class="top-left-part">
+
                 <!-- Logo -->
                 <a class="logo" href="index.html">
                     <!-- Logo icon image, you can use font-icon also --><b>
@@ -98,16 +99,16 @@
                     <a href="#" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
                 </li>
                 <li>
-                    <a href="{{route('event.index')}}" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>Event</a>
+                    <a href="{{route('event2')}}" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i>Event</a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i class="fa fa-calendar" aria-hidden="true"></i> Calender</a>
+                    <a href="#" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>User</a>
                 </li>
                 <li>
-                    <a href="{{route('tag.index')}}" class="waves-effect"><i class="fa fa-tag" aria-hidden="true"></i>Tag</a>
+                    <a href="{{route('tag.index')}}" class="waves-effect"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>Tag</a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i class="fa fa-money" aria-hidden="true"></i> Rekening</a>
+                    <a href="#" class="waves-effect"><i class="fa fa-money fa-fw" aria-hidden="true"></i> Rekening</a>
                 </li>
                 <li>
                     <a href="{{route('category.index')}}" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>Category</a>
@@ -118,7 +119,7 @@
 
             </ul>
             <div class="center p-20">
-                <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank" class="btn btn-danger btn-block waves-effect waves-light">Upgrade to Pro</a>
+                <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank" class="btn btn-danger btn-block waves-effect waves-light"></a>
             </div>
         </div>
 

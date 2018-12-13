@@ -8,18 +8,18 @@
                 <h2 class="card-title">Update Category</h2>
             </div>
             <div class="justify-content-center">
-                <div class="col-4 p-3">
+                <div class="col-lg-5">
                     @if(session()->has('alert'))
                         <div class="alert alert-success">
                             {{session('msg')}}
                         </div>
                     @endif
-                    <form action="{{route('category.update')}}" method="POST">
+                    <form action="{{route('category.update', $category)}}" method="POST">
                         @method('PUT')
                         @csrf
                         <div class="form-group">
                             <label for="tag">Category</label>
-                            <input type="text" name="nama" class="form-control" required>
+                            <input type="text" name="nama" class="form-control" required value="{{$category->nama}}">
                         </div>
                         <div class="">
                             <button type="submit" class="btn btn-success">Update</button>

@@ -65,7 +65,11 @@
                 {{--@else--}}
                 {{--<a href="#" class="btn btn-primary" style="font-family: 'Times New Roman'">Punya Admin</a>--}}
               {{--@endif--}}
-              <a href="{{route('event.create')}}" class="btn btn-primary" style="font-family: 'Times New Roman'">Make Event</a>
+                <div class="container">
+                    <div class="intro-text">
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#">Make Event</a>
+                    </div>
+                </div>
             </h3>
           </div>
         </div>
@@ -166,7 +170,7 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">About</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h3 class="section-subheading text-muted">The Event Tel-U</h3>
           </div>
         </div>
         <div class="row">

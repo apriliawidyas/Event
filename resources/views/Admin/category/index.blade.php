@@ -8,7 +8,7 @@
                 <h2 class="card-title">List Category</h2>
             </div>
             <div class="">
-                <a href="{{route('category.create')}}" class="btn btn-primary">Add Tag</a>
+                <a href="{{route('category.create')}}" class="btn btn-primary">Add Category</a>
             </div>
             <div class="table-responsive">
                 <table class="table table-striped table-hover">
@@ -25,7 +25,7 @@
                                 <form action="{{ route('category.destroy', $item)}}" method="Post">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
-                                    <a href="{{url(('admin/category/edit'), ['id'=>$item->id])}}" class="btn badge-warning">Edit</a>
+                                    <a href="{{route('category.edit', ['id'=>$item->id])}}" class="btn badge-warning">Edit</a>
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </form>
                             </td>

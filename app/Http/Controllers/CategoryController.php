@@ -66,7 +66,7 @@ class CategoryController extends Controller
      */
     public function edit(category $category)
     {
-        //
+        return view('Admin.category.edit', compact('category'));
     }
 
     /**
@@ -78,7 +78,9 @@ class CategoryController extends Controller
      */
     public function update(Request $request, category $category)
     {
-        //
+        $data = $request->all();
+        $category->update($data);
+        return redirect(route('category.index'))->with(['alert'=>'success', 'msg'=>'Data Berhasil di DiUbah']);
     }
 
     /**
@@ -89,6 +91,7 @@ class CategoryController extends Controller
      */
     public function destroy(category $category)
     {
-        //
+        $category->delete();
+        return back();
     }
 }

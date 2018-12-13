@@ -26,27 +26,20 @@ Route::get('/home_user', function () {
 Route::get('regisAdmin', function (){
     return view('registerAdmin');
 });
-Route::get('admin', 'AdminController@index');
-Route::get('admin/event', 'EventController@index')->name('event.index');
-Route::get('admin/event/create', 'EventController@create')->name('event.create');
-Route::post('admin/event/store', 'EventController@store')->name('event.store');
-Route::put('admin/event/edit/', 'EventController@store')->name('event.update');
-Route::get('admin/event/destroy', 'EventController@destroy')->name('event.destroy');
+Route::get('admin', 'AdminController@index')->name('admin.home');
 
-Route::get('admin/tag', 'TagController@index')->name('tag.index');
-Route::get('admin/tag/create', 'TagController@create')->name('tag.create');
-Route::post('admin/tag/store', 'TagController@store')->name('tag.store');
-Route::put('admin/tag/edit/', 'TagController@store')->name('tag.update');
-Route::get('admin/tag/destroy', 'TagController@destroy')->name('tag.destroy');
-
-Route::get('admin/category', 'CategoryController@index')->name('category.index');
-Route::get('admin/category/create', 'CategoryController@create')->name('category.create');
-Route::post('admin/category/store', 'CategoryController@store')->name('category.store');
-Route::put('admin/category/edit/', 'CategoryController@store')->name('category.update');
-Route::get('admin/category/destroy', 'CategoryController@destroy')->name('category.destroy');
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('event', 'EventController');
+    Route::resource('tag', 'TagController');
+    Route::resource('category', 'CategoryController');
+});
 
 
-Route::get('/home_user', 'User@index');
+Route::get('/home_user', 'User@index')->name('user.home');
+Route::group(['prefix' => 'user'], function () {
+
+});
+
 //Route::get('/login', 'User@login');
 //Route::post('/loginPost', 'User@loginPost');
 //Route::get('/register', 'User@register');
