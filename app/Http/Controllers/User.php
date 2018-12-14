@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\event;
 use App\ModelUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -38,6 +39,7 @@ class User extends Controller
             return redirect('login')->with('alert','Password atau Email, Salah !');
         }
     }
+
     public function logout(){
         Session::flush();
         return redirect('login')->with('alert','Kamu sudah logout');

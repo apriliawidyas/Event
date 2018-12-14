@@ -10,9 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use App\event;
 Route::get('/', function () {
-    return view('index');
+        $events= event::all();
+        return view('index', [
+            'events' => $events
+        ]);
 });
 
 Route::get('/register', function () {

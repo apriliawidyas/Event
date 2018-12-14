@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h2 class="card-title">Event List</h2>
                 <div class="">
-                    <a href="{{route('event2')}}" class="btn btn-primary">Add Event</a>
+                    <a href="{{route('event.create')}}" class="btn btn-primary">Add Event</a>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-striped table-hover">

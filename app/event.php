@@ -20,8 +20,9 @@ class event extends Model
         'foto',
     ];
 
-    public function jenis() {
-        return $this->belongsTo(category::class);
+    public function category() {
+        return $this->belongsTo(category::class, 'category_id', 'id');
     }
+
 
 }

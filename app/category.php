@@ -11,7 +11,7 @@ class category extends Model
         'nama',
     ];
 
-    public function kategori(){
-        return $this->hasOne(category::class,'category_id','id');
+    public function event(){
+        return $this->hasOne(event::class, 'category_id', 'id');
     }
 }

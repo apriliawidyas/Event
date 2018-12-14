@@ -99,7 +99,7 @@
                     <a href="#" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
                 </li>
                 <li>
-                    <a href="{{route('event2')}}" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i>Event</a>
+                    <a href="{{route('event.index')}}" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i>Event</a>
                 </li>
                 <li>
                     <a href="#" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>User</a>
