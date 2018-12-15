@@ -12,7 +12,7 @@
                     <div>{{Session::get('alert-success')}}</div>
                 </div>
             @endif
-            <form action="{{ url('/loginPost') }}" method="post">
+            <form method="post">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="email">Email:</label>

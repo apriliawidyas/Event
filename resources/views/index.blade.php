@@ -28,28 +28,28 @@
             <h3 class="section-subheading text-muted">Where Event Matters.</h3>
             <div class="container">
               <div class="intro-text">
-                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#">Make Event</a>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/makeevent">Make Event</a>
               </div>
             </div>
             <br>
           </div>
         </div>
-        <div class="row">
-            @foreach($events as $key=>$event)
-          <div class="col-md-4 col-sm-6 portfolio-item">
-            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-              <div class="portfolio-hover">
-                <div class="portfolio-hover-content">
-                  <i class="fas fa-plus fa-3x"></i>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio/01-thumbnail.jpg" alt="">
-            </a>
-            <div class="portfolio-caption">
-              {{$event->nama_event}}
-            </div>
-          </div>
-            @endforeach
+        {{--<div class="row">--}}
+            {{--@foreach($events as $key=>$event)--}}
+          {{--<div class="col-md-4 col-sm-6 portfolio-item">--}}
+            {{--<a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">--}}
+              {{--<div class="portfolio-hover">--}}
+                {{--<div class="portfolio-hover-content">--}}
+                  {{--<i class="fas fa-plus fa-3x"></i>--}}
+                {{--</div>--}}
+              {{--</div>--}}
+              {{--<img class="img-fluid" src="{{ asset('storage/' . $event->foto) }}" alt="{{$event->foto}}">--}}
+            {{--</a>--}}
+            {{--<div class="portfolio-caption">--}}
+              {{--{{$event->nama_event}}--}}
+            {{--</div>--}}
+          {{--</div>--}}
+            {{--@endforeach--}}
           {{--<div class="col-md-4 col-sm-6 portfolio-item">--}}
             {{--<a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">--}}
               {{--<div class="portfolio-hover">--}}
@@ -410,40 +410,40 @@
     <!-- Portfolio Modals -->
 
     <!-- Modal 1 -->
-@foreach($events as $key=>$event)
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">{{$event->nama_event}}</h2>
-                  <p class="item-intro text-muted"></p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
-                  <p>{{$event->deskripsi}}</p>
-                  <ul class="list-inline">
-                    <li>Date: {{$event->tgl_event}}</li>
-                    <li>Category: {{$event->category->nama}}</li>
-                  </ul>
-                  <button class="btn btn-primary" type="button" href="#">
-                    <i class="fas fa-check"></i>
-                    Join</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-@endforeach
+{{--@foreach($events as $key=>$event)--}}
+    {{--<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">--}}
+      {{--<div class="modal-dialog">--}}
+        {{--<div class="modal-content">--}}
+          {{--<div class="close-modal" data-dismiss="modal">--}}
+            {{--<div class="lr">--}}
+              {{--<div class="rl"></div>--}}
+            {{--</div>--}}
+          {{--</div>--}}
+          {{--<div class="container">--}}
+            {{--<div class="row">--}}
+              {{--<div class="col-lg-8 mx-auto">--}}
+                {{--<div class="modal-body">--}}
+                {{----}}
+                  {{--<!-- Project Details Go Here -->--}}
+                  {{--<h2 class="text-uppercase">{{$event->nama_event}}</h2>--}}
+                  {{--<p class="item-intro text-muted"></p>--}}
+                  {{--<img class="img-fluid d-block mx-auto" src="{{ asset('storage/' . $event->foto) }}" alt="{{$event->foto}}">--}}
+                  {{--<p>{{$event->deskripsi}}</p>--}}
+                  {{--<ul class="list-inline">--}}
+                    {{--<li>Date: {{$event->tgl_event}}</li>--}}
+                    {{--<li>Category: {{$event->category->nama}}</li>--}}
+                  {{--</ul>--}}
+                  {{--<button class="btn btn-primary" type="button" href="#">--}}
+                    {{--<i class="fas fa-check"></i>--}}
+                    {{--Join</button>--}}
+                {{--</div>--}}
+              {{--</div>--}}
+            {{--</div>--}}
+          {{--</div>--}}
+        {{--</div>--}}
+      {{--</div>--}}
+    {{--</div>--}}
+{{--@endforeach--}}
 
     <!-- Modal 2 -->
     
