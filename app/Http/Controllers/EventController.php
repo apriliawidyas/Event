@@ -63,6 +63,62 @@ class EventController extends Controller
         return redirect(route('event.index'));
     }
 
+    public function simpan(Request $request)
+    {
+//        if ($request->foto){
+//            $path = Storage::disk('public')->put('fotoevent',$request->foto);
+//        }
+        $makeevent = $request->all();
+        if($request->hasFile('foto'))
+        {
+            $img = $request->file('foto');
+            $fileName = uniqid() . $img->getClientOriginalName();
+            $path = 'uploads/events/';
+            $aa = $path . $fileName;
+            Storage::disk('public')->putFileAs($path, $img, $fileName);
+        }
+
+//        $makeevent = new event();
+//        $makeevent->penyelenggara = $request->input('penyelenggara');
+//        $makeevent->nama_event = $request->input('nama_event');
+//        $makeevent->tgl_event = $request->input('tgl_event');
+//        $makeevent->waktu_event = $request->input('waktu');
+//        $makeevent->tempat_event = $request->input('tempat_event');
+//        $makeevent->harga = $request->input('harga');
+//        $makeevent->kuota = $request->input('kuota');
+//        $makeevent->deskripsi = $request->input('deskripsi');
+//        $makeevent->category_id = $request->input('category_id');
+//        $makeevent->foto = $request->input('foto');
+
+
+
+//        if ($request->foto){
+//            $makeevent->foto = $path;
+//        }
+        $makeevent['foto'] = $aa;
+
+        event::create($makeevent);
+//        $makeevent->save();
+
+//        $data = $request->all();
+//
+//        if($request->hasFile('foto'))
+//        {
+//            $img = $request->file('foto');
+//            $fileName = uniqid() . $img->getClientOriginalName();
+//            $path = 'uploads/events/';
+//            $fullPath = $path . $fileName;
+//            Storage::disk('public')->putFileAs($path, $img, $fileName);
+//        }
+//
+//
+//        $data['foto'] = $fullPath;
+//
+//        event::create($data);
+        return redirect(route('index'));
+    }
+
+
     /**
      * Display the specified resource.
      *

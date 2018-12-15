@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Middleware\event;
+use App\category;
+use App\event;
 use App\Mahasiswa;
 use Illuminate\Http\Request;
 
@@ -25,28 +26,30 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $events = event::all();
+        return view('index', compact('events'));
     }
 
-    public function lamanlogin(){
+    public function lamanlogin()
+    {
         return view('auth.login');
     }
 
-    public function formlogin(Request $request){
-        $email      = $request->input('email');
-        $password   = $request->input('password');
-        $mahasiswa  = Mahasiswa::where('email',$email)->get();
-        $emaildb = $mahasiswa->pluck('email')->first();
-
-        if($emaildb!=null){
-            $passworddb = $mahasiswa->pluck('password')->first();
-            if($password==$passworddb) {
-                return redirect()->route('home');
-            }
-        }
 
 
-        return view('login');
+//    public function formlogin(Request $request){
+//        $email      = $request->input('email');
+//        $password   = $request->input('password');
+//        $mahasiswa  = Mahasiswa::where('email',$email)->get();
+//        $emaildb = $mahasiswa->pluck('email')->first();
+//
+//        if($emaildb!=null){
+//            $passworddb = $mahasiswa->pluck('password')->first();
+//            if($password==$passworddb) {
+//                return redirect()->route('home');
+//            }
+//        }
 
-    }
+//        return view('login');
+//}
 }

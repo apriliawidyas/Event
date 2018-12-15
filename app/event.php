@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class event extends Model
@@ -24,5 +25,8 @@ class event extends Model
         return $this->belongsTo(category::class, 'category_id', 'id');
     }
 
+    public function booking(){
+        return $this->hasOne(event::class, 'id_event', 'id');
+    }
 
 }

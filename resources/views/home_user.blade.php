@@ -60,8 +60,8 @@
             <h2 class="section-heading text-uppercase">Event Coming Soon!</h2>
             <h3 class="section-subheading text-muted">Where Event Matters. <br><br>
               {{--{{Auth::user()}}--}}
-              {{--@if(Auth::User()->role == 'user')--}}
-                {{--<a href="#" class="btn btn-primary" style="font-family: 'Times New Roman'">Punya User biasa</a>--}}
+              {{--@if(Auth::UserController()->role == 'user')--}}
+                {{--<a href="#" class="btn btn-primary" style="font-family: 'Times New Roman'">Punya UserController biasa</a>--}}
                 {{--@else--}}
                 {{--<a href="#" class="btn btn-primary" style="font-family: 'Times New Roman'">Punya Admin</a>--}}
               {{--@endif--}}

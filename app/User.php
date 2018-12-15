@@ -15,9 +15,16 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    protected $table = 'users';
+
     protected $fillable = [
-        'name', 'email', 'password', 'role'
+        'name', 'email', 'password', 'role', 'tgl_lahir', 'notelp', 'alamat', 'foto'
     ];
+
+    public function booking(){
+        return $this->hasOne(event::class, 'id_event', 'id');
+    }
 
     /**
      * The attributes that should be hidden for arrays.
@@ -27,4 +34,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] =  bcrypt($value);
+    }
 }
