@@ -65,18 +65,33 @@ class EventController extends Controller
 
     public function simpan(Request $request)
     {
-//        if ($request->foto){
-//            $path = Storage::disk('public')->put('fotoevent',$request->foto);
-//        }
-        $makeevent = $request->all();
+        $data = $request->all();
+
         if($request->hasFile('foto'))
         {
             $img = $request->file('foto');
             $fileName = uniqid() . $img->getClientOriginalName();
             $path = 'uploads/events/';
-            $aa = $path . $fileName;
+            $fullPath = $path . $fileName;
             Storage::disk('public')->putFileAs($path, $img, $fileName);
         }
+
+        $data['foto'] = $fullPath;
+
+        event::create($data);
+
+//        if ($request->foto){
+//            $path = Storage::disk('public')->put('fotoevent',$request->foto);
+//        }
+//        $makeevent = $request->all();
+//        if($request->hasFile('foto'))
+//        {
+//            $img = $request->file('foto');
+//            $fileName = uniqid() . $img->getClientOriginalName();
+//            $path = 'uploads/events/';
+//            $aa = $path . $fileName;
+//            Storage::disk('public')->putFileAs($path, $img, $fileName);
+//        }
 
 //        $makeevent = new event();
 //        $makeevent->penyelenggara = $request->input('penyelenggara');
@@ -95,9 +110,9 @@ class EventController extends Controller
 //        if ($request->foto){
 //            $makeevent->foto = $path;
 //        }
-        $makeevent['foto'] = $aa;
+//        $makeevent['foto'] = $aa;
 
-        event::create($makeevent);
+//        event::create($makeevent);
 //        $makeevent->save();
 
 //        $data = $request->all();
