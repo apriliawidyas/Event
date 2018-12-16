@@ -96,25 +96,25 @@
             </div>
             <ul class="nav" id="side-menu">
                 <li style="padding: 70px 0 0;">
-                    <a href="#" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>
+                    {{--<a href="#" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>Dashboard</a>--}}
                 </li>
                 <li>
                     <a href="{{route('event.index')}}" class="waves-effect"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i>Event</a>
                 </li>
                 <li>
-                    <a href="#" class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>User</a>
+                    <a href="{{route('useradmin.index')}}"class="waves-effect"><i class="fa fa-user fa-fw" aria-hidden="true"></i>User</a>
                 </li>
                 <li>
                     <a href="{{route('tag.index')}}" class="waves-effect"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>Tag</a>
                 </li>
-                <li>
-                    <a href="#" class="waves-effect"><i class="fa fa-money fa-fw" aria-hidden="true"></i> Rekening</a>
-                </li>
+                {{--<li>--}}
+                    {{--<a href="#" class="waves-effect"><i class="fa fa-money fa-fw" aria-hidden="true"></i> Rekening</a>--}}
+                {{--</li>--}}
                 <li>
                     <a href="{{route('category.index')}}" class="waves-effect"><i class="fa fa-columns fa-fw" aria-hidden="true"></i>Category</a>
                 </li>
                 <li>
-                    <a href="404.html" class="waves-effect"><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>Error 404</a>
+                    <a href="{{route('booking.index')}}" class="waves-effect"><i class="fa fa-book fa-fw" aria-hidden="true"></i>Booking</a>
                 </li>
 
             </ul>
