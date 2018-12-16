@@ -46,6 +46,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::resource('/booking', 'BookingController');
+Route::get('booking/destroy', 'BookingController@destroy');
 //Route::resource('/Admin/User/', 'UseradminController');
 
 Route::get('/home_user', 'UserController@index')->name('user.home');

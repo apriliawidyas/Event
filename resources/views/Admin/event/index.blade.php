@@ -30,7 +30,7 @@
                             <tr>
                                 <td>{{$item->penyelenggara}}</td>
                                 <td>{{$item->nama_event}}</td>
-                                <td>{{$item->category_id}}</td>
+                                <td>{{$item->category->nama}}</td>
                                 <td>{{$item->tgl_event}}</td>
                                 <td>{{$item->waktu_event}}</td>
                                 <td>{{$item->tempat_event}}</td>

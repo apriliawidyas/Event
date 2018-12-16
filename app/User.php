@@ -22,8 +22,8 @@ class User extends Authenticatable
         'name', 'email', 'password', 'role', 'tgl_lahir', 'notelp', 'alamat', 'foto'
     ];
 
-    public function booking(){
-        return $this->hasOne(event::class, 'id_event', 'id');
+    public function user(){
+        return $this->hasOne(event::class, 'id_user', 'id');
     }
 
     /**

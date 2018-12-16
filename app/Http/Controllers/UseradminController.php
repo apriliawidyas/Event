@@ -2,23 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Booking;
-use App\event;
-use Illuminate\Support\Facades\Auth;
+use App\useradmin;
 use Illuminate\Http\Request;
 
-class BookingController extends Controller
+class UseradminController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $booking = Booking::all();
-        return view('/Admin/booking/index', [
-            'booking' => $booking
+        $item = useradmin::all();
+        return view('/Admin/User/index', [
+            'item' => $item
         ]);
     }
 
@@ -40,20 +38,16 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        Booking::create([
-            'id_user' => Auth::user()->id,
-            'id_event' => $request->id_event
-        ]);
-        return view('/booking');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Booking  $booking
+     * @param  \App\useradmin  $useradmin
      * @return \Illuminate\Http\Response
      */
-    public function show(Booking $booking)
+    public function show(useradmin $useradmin)
     {
         //
     }
@@ -61,10 +55,10 @@ class BookingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Booking  $booking
+     * @param  \App\useradmin  $useradmin
      * @return \Illuminate\Http\Response
      */
-    public function edit(Booking $booking)
+    public function edit(useradmin $useradmin)
     {
         //
     }
@@ -73,10 +67,10 @@ class BookingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Booking  $booking
+     * @param  \App\useradmin  $useradmin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Booking $booking)
+    public function update(Request $request, useradmin $useradmin)
     {
         //
     }
@@ -84,12 +78,11 @@ class BookingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Booking  $booking
+     * @param  \App\useradmin  $useradmin
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Booking $booking)
+    public function destroy(useradmin $useradmin)
     {
-        $booking->delete();
-        return back();
+        //
     }
 }

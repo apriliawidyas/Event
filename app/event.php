@@ -26,7 +26,7 @@ class event extends Model
         return $this->belongsTo(category::class, 'category_id', 'id');
     }
 
-    public function booking(){
+    public function event(){
         return $this->hasOne(event::class, 'id_event', 'id');
     }
 

@@ -14,12 +14,19 @@
                     <thead>
                     <th>User</th>
                     <th>Nama Event</th>
+                    <th>Action</th>
                     </thead>
                     <tbody>
                     @foreach($booking as $booking)
-                        <td>{{$booking->id_user}}</td>
-                        <td>{{$booking->id_event}}</td>
-                    <td></td>
+                        <td>{{$booking->user->name}}</td>
+                        <td>{{$booking->event->nama_event}}</td>
+                        <td>
+                            <form action="{{ route('booking.destroy', $booking)}}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tbody>
                     @endforeach
                 </table>

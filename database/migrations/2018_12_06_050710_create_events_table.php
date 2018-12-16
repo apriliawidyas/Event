@@ -23,7 +23,7 @@ class CreateEventsTable extends Migration
             $table->integer('harga');
             $table->string('foto');
             $table->integer('kuota');
-            $table->string('deskripsi');
+            $table->text('deskripsi');
             $table->integer('category_id')->unsigned();
             $table->timestamps();
 
