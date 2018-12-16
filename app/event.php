@@ -9,6 +9,7 @@ class event extends Model
 {
     protected $table="events";
     protected $fillable=[
+        'id',
         'penyelenggara',
         'nama_event',
         'tgl_event',

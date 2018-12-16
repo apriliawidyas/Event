@@ -8,7 +8,7 @@
                 <h2 class="card-title">User List</h2>
             </div>
             <div class="table-responsive">
-                <table class="table-striped table-hover">
+                <table class=" table table-striped table-hover">
                     <thead>
                     <th>Nama</th>
                     <th>Email</th>
@@ -20,9 +20,9 @@
                     </thead>
 
                     <tbody>
-                    @foreach($data as $item)
+                    @foreach($item as $item)
                         <tr>
-                            <td>{{$item->nama}}</td>
+                            <td>{{$item->name}}</td>
                             <td>{{$item->email}}</td>
                             <td>{{$item->alamat}}</td>
                             <td>{{$item->tgl_lahir}}</td>

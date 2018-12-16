@@ -67,7 +67,7 @@
 
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{ Auth::user()->name }}<span class="caret"></span>
+                        {{ Auth::user()->name }}, {{ Auth::user()->id }}<span class="caret"></span>
                     </button>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: grey">

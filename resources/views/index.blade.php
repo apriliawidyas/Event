@@ -43,6 +43,7 @@
                                 </div>
                             </div>
                             <img class="img-fluid" src="{{ asset('storage/' . $event->foto) }}" alt="{{$event->foto}}">
+                            <input name="id_event" value="{{$event->id}}" type="hidden">
                         </a>
                         <div class="portfolio-caption">
                             {{$event->nama_event}}
@@ -173,17 +174,17 @@
                         <p class="text-muted">Back End Developer</p>
                         <ul class="list-inline social-buttons">
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://twitter.com/Apriliaari_w">
                                     <i class="fab fa-twitter"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://www.facebook.com/apriliaariey.widyass">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="#">
+                                <a href="https://www.linkedin.com/in/apriliawidyas/">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
                             </li>
@@ -223,35 +224,6 @@
         </div>
     </section>
 
-
-    <!-- Clients -->
-
-    {{--<section class="py-5">--}}
-        {{--<div class="container">--}}
-            {{--<div class="row">--}}
-                {{--<div class="col-md-3 col-sm-6">--}}
-                    {{--<a href="#">--}}
-                        {{--<img class="img-fluid d-block mx-auto" src="img/logos/envato.jpg" alt="">--}}
-                    {{--</a>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-3 col-sm-6">--}}
-                    {{--<a href="#">--}}
-                        {{--<img class="img-fluid d-block mx-auto" src="img/logos/designmodo.jpg" alt="">--}}
-                    {{--</a>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-3 col-sm-6">--}}
-                    {{--<a href="#">--}}
-                        {{--<img class="img-fluid d-block mx-auto" src="img/logos/themeforest.jpg" alt="">--}}
-                    {{--</a>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-3 col-sm-6">--}}
-                    {{--<a href="#">--}}
-                        {{--<img class="img-fluid d-block mx-auto" src="img/logos/creative-market.jpg" alt="">--}}
-                    {{--</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</section>--}}
 
     <!-- Contact -->
 
@@ -315,7 +287,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2018</span>
+                    <span class="copyright">Our Website - Kelompok 7</span>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline social-buttons">
@@ -448,11 +420,16 @@
                                     <ul class="list-inline">
                                         <li>Date: <span id="date"></span></li>
                                         <li>Category: <span id="category"></span></li>
+                                        <li>Kuota: <span id="kuota"></span></li>
                                     </ul>
-                                    <button class="btn btn-primary" type="button" href="#">
-                                        <i class="fas fa-check"></i>
-                                        Join
-                                    </button>
+                                    <form action="{{route('booking.store')}}" method="post">
+                                        {{csrf_field()}}
+                                        <input type="hidden" value="{{ $event->id }}" name="id_event">
+                                        <button class="btn btn-prim ary" type="input">
+                                            <i class="fas fa-check"></i>
+                                            Join
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -474,6 +451,7 @@
             $('#date').text(data.tgl_event);
             $('#category').text(category);
             $('#thumb').attr('src', '{{ asset('storage') }}' + '/' + data.foto);
+            $('#kuota').text(data.kuota);
         });
     </script>
 @endpush

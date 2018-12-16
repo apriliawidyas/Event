@@ -7,19 +7,21 @@
                 <h2 class="card-title">Booking List</h2>
             </div>
             <div class="">
-                <a href="{{route('booking.create')}}">Add Booking</a>
+                <a href="">Add Booking</a>
             </div>
             <div class="table-responsive">
-                <table class="table-striped table-hover">
+                <table class="table table-striped table-hover">
                     <thead>
-                    <th>Peserta</th>
+                    <th>User</th>
                     <th>Nama Event</th>
-                    <th>Action</th>
                     </thead>
-
                     <tbody>
-
+                    @foreach($booking as $booking)
+                        <td>{{$booking->id_user}}</td>
+                        <td>{{$booking->id_event}}</td>
+                    <td></td>
                     </tbody>
+                    @endforeach
                 </table>
             </div>
         </div>

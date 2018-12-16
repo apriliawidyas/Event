@@ -31,22 +31,31 @@ Route::get('/home_user', function () {
 Route::get('regisAdmin', function (){
     return view('registerAdmin');
 });
+
+Route::get('/admin/booking/index', function (){
+    return view('/admin/booking/index');
+});
 Route::get('admin', 'AdminController@index')->name('admin.home');
 
 Route::group(['prefix' => 'admin'], function () {
     Route::resource('event', 'EventController');
     Route::resource('tag', 'TagController');
     Route::resource('category', 'CategoryController');
+    Route::resource('useradmin', 'UseradminController');
+    Route::get('booking', 'BookingController@show');
 });
+
+Route::resource('/booking', 'BookingController');
+//Route::resource('/Admin/User/', 'UseradminController');
 
 Route::get('/home_user', 'UserController@index')->name('user.home');
 Route::group(['prefix' => 'user'], function () {
-
+    Route::get('makeevent', function (){
+        return view('makeEvent');
+    });
 });
 
-Route::get('makeevent', function (){
-    return view('makeEvent');
-});
+
 
 //Route::get('/login', 'UserController@login');
 //Route::post('/loginPost', 'UserController@loginPost');
@@ -56,6 +65,7 @@ Route::get('makeevent', function (){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 //Route::get('/aa', 'HomeController@create')->name('popup');
 
 //Route::get('login', 'HomeController@lamanlogin')->name('login');

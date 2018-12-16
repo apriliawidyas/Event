@@ -18,7 +18,10 @@ class UserController extends Controller
         else{
             return view('home_user');
         }
+
+
     }
+
 
     public function edit(User $user){
         return view('editprofile', compact('user'));
@@ -96,4 +99,18 @@ class UserController extends Controller
 
         return redirect('/');
     }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+        return back();
+    }
+
+    public function show(){
+        $data = User::all();
+        return view('Admin.User.index', [
+            'data' => $data
+        ]);
+    }
+
 }
